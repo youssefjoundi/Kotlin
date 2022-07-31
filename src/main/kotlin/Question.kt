@@ -55,7 +55,7 @@ fun main() {
     ages["hed"] = 23
     ages["me"] = 24
     ages["haitam"] = 20
-    for ((name, age) in ages){
+    for ((name,age) in ages){
         println("$name has $age years old")
     }
     println("---------Index-----------")
