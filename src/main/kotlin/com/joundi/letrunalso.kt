@@ -21,6 +21,10 @@ fun main() {
     var x = "Anupam"
     x.let { outer -> outer.let { inner -> println("Inner is $inner and outer is $outer") } }
     //******************************************************************//
+//    Kotlin run expression can change the outer property.
+//    Hence in the above code, we’ve redefined it for the local scope.
+//    Similar to the let function, the run function also returns the last statement.
+//    Unlike let, the run function doesn’t support the it keyword.
     var tutorial = "This is Kotlin Tutorial"
     println(tutorial) //This is Kotlin Tutorial
     tutorial = run {
@@ -28,4 +32,27 @@ fun main() {
         tutorial
     }
     println(tutorial)
+//    let end run
+    var p : String? = null
+    p?.let { println("p is $p") } ?: run {
+        print("p was null. Setting default value to: ")
+        p = "Kotlin"
+    }
+    println(p)
+    //******************************************************************//
+    //let and also
+    data class Person(var name: String, var tutorial : String)
+    var person = Person("Anupam", "Kotlin")
+
+    var l = person.let { it.tutorial = "Android" }
+    var al = person.also { it.tutorial = "Android" }
+
+    println(l)
+    println(al)
+    println(person)
+//    In the above code, we’ve used Data classes.
+//    The also expression returns the data class object whereas the let expression
+//    returns nothing (Unit) as we didn’t specify anything explicitly.
+
+
 }
