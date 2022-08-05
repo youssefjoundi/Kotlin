@@ -1,3 +1,5 @@
+package com.joundi
+
 import java.io.FileReader
 import java.io.IOException
 import java.util.TreeMap
@@ -10,7 +12,7 @@ fun main() {
 //    q.Question = "can't change" //mutubale
     q.display()
 
-    val message = if (q.answer == q.correctAnswer){
+    val message = if (q.answer == q.correctAnswer) {
         "Kayn"
     } else {
         "makaynch"
@@ -19,21 +21,21 @@ fun main() {
 
     q.printResult()
 
-    val number:Int? = try {
+    val number: Int? = try {
         Integer.parseInt(q.answer)
-    } catch (e:NumberFormatException){
+    } catch (e: NumberFormatException) {
         null
     }
     println("Number is $number")
-    for (i in 1 until 10){
+    for (i in 1 until 10) {
         println(i)
     }
     println("---------.. Range---------------")
-    for (i in 1 .. 10){
+    for (i in 1..10) {
         println(i)
     }
     var a = 'a'..'z'
-    for (i in a){
+    for (i in a) {
         println(i)
     }
     println("---------Downto-------------")
@@ -45,8 +47,8 @@ fun main() {
         println(i)
     }
     println("---------List-----------")
-    var numbers = listOf<Int>(1,2,3,4,5)
-    for (i in numbers){
+    var numbers = listOf<Int>(1, 2, 3, 4, 5)
+    for (i in numbers) {
         println(i)
     }
     println("---------TreeMap-----------")
@@ -55,18 +57,18 @@ fun main() {
     ages["hed"] = 23
     ages["me"] = 24
     ages["haitam"] = 20
-    for ((name,age) in ages){
+    for ((name, age) in ages) {
         println("$name has $age years old")
     }
     println("---------Index-----------")
-    for ((index, element) in numbers.withIndex()){
+    for ((index, element) in numbers.withIndex()) {
         println("$element is $index")
     }
 
     var reader = FileReader("/Users/yojoundi/Desktop/Kotlin_Concepts/build.gradle.kts")
     try {
         reader.read()
-    } catch (e : IOException) {
+    } catch (e: IOException) {
 
     } finally {
 
@@ -75,10 +77,11 @@ fun main() {
 }
 
 class Question {
-    var answer:String = ""
+    var answer: String = ""
     val correctAnswer = "Test2"
-//    val Question = "What is this ?"
-    fun display(){
+
+    //    val Question = "What is this ?"
+    fun display() {
         println("My answer is " + answer)
     }
 
@@ -87,6 +90,7 @@ class Question {
             correctAnswer -> {
                 println("{kayn}")
             }
+
             else -> {
                 println("{makaynch}")
             }

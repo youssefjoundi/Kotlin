@@ -14,6 +14,5 @@ fun main() {
     val people = events_t
         .flatMap(Events::people)
         .distinct()
-
     for (p in people) println(p.name)
 }
