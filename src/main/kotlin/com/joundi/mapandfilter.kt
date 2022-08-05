@@ -29,6 +29,8 @@ fun main() {
                 .map { m ->m.title }
 
     for (t in titles) println(t)
+
+
 }
 
 class Meetings(val id:Int, val title:String){
