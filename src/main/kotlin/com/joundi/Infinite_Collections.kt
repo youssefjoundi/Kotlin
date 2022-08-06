@@ -18,7 +18,7 @@ fun main() {
     var names = Schools
         .asSequence()
         .filter { println("filer ($it)");it.name.endsWith("l") }
-        .map { println("map ($it"); it.name }
+        .map { println("map ($it)"); it.name }
 
     iter(names)
 //    for (t in names) println(t)
